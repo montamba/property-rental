@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>add</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background: url("pic/background/background3.jpg") no-repeat center center fixed;
+            background-size: cover;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            color: white;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            padding: 30px;
+            background: #009688;
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+            width: 100%;
+            max-width: 400px;
+        }
+
+        form input, form textarea {
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            background: rgba(0, 0, 0, 0.459);
+            color: white;
+            font-size: 16px;
+            outline: none;
+            transition: background 0.3s ease;
+        }
+
+        form input::placeholder, form textarea::placeholder {
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        form input:focus, form textarea:focus {
+            background: rgba(0, 0, 0, 0.429);
+        }
+
+        h1 {
+            position: absolute;
+            top: 130px;
+            font-size: 36px;
+            text-align: center;
+            color: greenyellow;
+            -webkit-text-stroke: 1px black;
+            text-shadow: 2px 2px 5px black;
+            margin-bottom: 20px;
+
+        }
+
+        button {
+            background: crimson;
+            color: white;
+            border: none;
+            border-radius: 50%;
+            height: 40px;
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 18px;
+            width: 40px;
+            text-decoration: none;
+            transition: background 0.3s ease;
+        }
+
+        button:hover {
+            background: darkred;
+        }
+
+        button a {
+            color: white;
+            text-decoration: none;
+        }
+
+        form input[type="submit"] {
+            background: #00b894;
+            color: white;
+            border-radius: 5px;
+            transition: background 0.3s ease;
+            cursor: pointer;
+
+        }
+
+        form input[type="submit"]:hover {
+            background: #00997d;
+        }
+        
+    </style>
+</head>
+<body>
+    <button><a href="shopowner.html">X</a></button>
+    <h1>ADD PROPERTY</h1>
+    <form action="">
+        <input type="text" name="productname" placeholder="Product Name">
+        <input type="text" name="location" placeholder="Location">
+        <input type="text" name="proprice" placeholder="Price">
+        <input type="text" name="space" placeholder="Housing space">
+        <textarea class="s" name="decription" placeholder="Description"></textarea>
+        <input type="submit" value="ADD">
+    </form>
+</body>
+</html>

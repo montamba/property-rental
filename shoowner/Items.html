@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>House Rental</title>
+  <style>
+    * {
+      padding: 0;
+      margin: 0;
+      box-sizing: border-box;
+      font-family: 'Arial', sans-serif;
+    }
+
+    body {
+      background-color: #f4f4f4;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .products {
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      width: fit-content;
+      background-color: #ffffff;
+      height: 500px;
+      overflow-y: scroll;
+    }
+
+    .headers {
+      display: flex;
+      background-color: #3498db;
+      color: #ecf0f1;
+    }
+
+    .items {
+      display: flex;
+      border-top: 1px solid #dcdcdc;
+      transition: background-color 0.3s ease;
+    }
+
+    .items:hover {
+      background-color: #f9f9f9;
+    }
+
+    .headers h3, .items p, .items button {
+      padding: 15px 10px;
+      text-align: center;
+      flex: 1;
+    }
+
+    .headers h3 {
+      font-size: 14px;
+      font-weight: bold;
+      border-right: 1px solid #2c3e50;
+    }
+
+    .items p {
+      font-size: 14px;
+      color: #2c3e50;
+      border-right: 1px solid #e5e5e5;
+    }
+
+    .items p:last-child {
+      border-right: none;
+    }
+
+    .items button {
+      background-color: #3498db;
+      color: #ffffff;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .items button:hover {
+      background-color: #009688;
+    }
+
+    .id, .price, .buyers, .available {
+      width: 100px;
+    }
+
+    .name, .des {
+     width: 200px;
+    }
+    
+    .edit {
+      width: 100px;
+    }
+
+    .add{
+      position: absolute;
+      right: 20px;
+      top: 200px;
+      width: 250px;
+      height: 50px;
+      background: linear-gradient(135deg, #00bcd4, #009688);
+      font-size: larger;
+      border:1px solid lightgreen;
+      border-radius: 10px;
+      font-size: large;
+      transition: 1s;
+    }
+
+    .add:hover{
+      background: linear-gradient(135deg, #009688, #00bcd4);
+      transform: scale(1.1);
+      color: #f4f4f4;
+    }
+
+    .exit{
+      position: absolute;
+      right: 20px;
+      top: 260px;
+      width: 250px;
+      height: 50px;
+      background: linear-gradient(135deg, #d40000, #e19e9e);
+      font-size: larger;
+      border:1px solid lightgreen;
+      border-radius: 10px;
+      font-size: large;
+      transition: 1s;
+    }
+
+    .exit:hover{
+      background: linear-gradient(135deg, #f8a6a6, #ff6262);
+      transform: scale(1.1);
+      color: #f4f4f4;
+    }
+
+    a{
+      text-decoration: none;
+      color: white;
+    }
+  </style>
+</head>
+<body>
+  <div class="products">
+    <div class="headers">
+      <h3 class="id">ID</h3>
+      <h3 class="name">House Name</h3>
+      <h3 class="price">House Price</h3>
+      <h3 class="buyers">Spaces</h3>
+      <h3 class="des">Description</h3>
+      <h3 class="available">Available</h3>
+      <div class="edit"></div>
+    </div>
+
+    <div class="items">
+      <p class="id">1</p>
+      <p class="name">Corazon</p>
+      <p class="price">6000/m</p>
+      <p class="buyers">2/5</p>
+      <p class="des">Beautiful house with modern amenities.</p>
+      <p class="available">3</p>
+      <button class="edit" ><a href="edit.html">edit</a></button>
+    </div>
+  </div>
+
+  <button class="add"><a href="add.html">add item</a></button>
+  <button class="exit"><a href="shopowner.html">EXIT</a></button>
+</body>
+</html>

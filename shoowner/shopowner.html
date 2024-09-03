@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Landlord</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background: url("pic/background/background3.jpg") no-repeat center center fixed;
+            background-size: cover;
+            color: #333;
+        }
+
+        nav {
+            height: 80px;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: rgba(255, 255, 255, 0.8); 
+            padding: 0 20px;
+            border-bottom: 2px solid #333;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        nav img {
+            border: 2px solid #333;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+        }
+
+        nav .logo {
+            display: flex;
+            align-items: center;
+        }
+
+        nav .logo img {
+            margin-right: 10px;
+        }
+
+        nav p {
+            font-size: 24px; 
+            font-weight: bold;
+            color: #333;
+        }
+
+        nav .profile{
+            width: 60px;
+            height: 70px;
+        }
+
+        .buttons {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            height: calc(100vh - 80px);
+            gap: 20px;
+            padding: 20px;
+        }
+
+        .buttons div {
+            display: flex;
+            gap: 200px;
+        }
+
+        .buttons button {
+            width: 250px;
+            height: 60px;
+            background: linear-gradient(135deg, #00bcd4, #009688);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 18px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .buttons button:hover {
+            background: linear-gradient(135deg, #009688, #00bcd4);
+            transform: scale(1.05);
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .nn{
+            display: none;
+            overflow: hidden;
+        }
+
+        
+
+        .first{
+            border: 2px solid black;
+            width: 60px;
+            height: 57px;
+            overflow: hidden;
+            border-radius: 50%;
+            position: absolute;
+            top: 3px;
+            right: 21px;
+            transition: 300ms;
+
+        }
+
+        .first button{
+            display: none;
+        }
+
+        .second{
+            border: 3px solid black;
+            width: 60px;
+            height: 60px;
+            overflow: hidden;
+            border-radius: 50%;
+            position: absolute;
+            top: 100px;
+            right: 21px;
+            background: #0096872e;
+            transition: 800ms;
+        }
+
+        .second button{
+            display: none;
+        }
+
+        .down{
+            display: flex;
+            overflow:visible;
+            height: 300px;
+            gap: 1px;
+            flex-direction: column;
+            width: 300px;
+            padding: 20px;
+            background: #00968786;
+            border-radius: 10px;
+            box-shadow: 0 0 20px black;
+            position: absolute;
+            top: 100px;
+            right: 120px;
+            transition: 800ms;
+        }
+
+        .down button{
+            display: unset;
+            height: 50px;
+            background: rgb(200, 199, 195);
+            font-size: large;
+            border-radius: 5px;
+            transition: 300ms;
+        }
+
+        .down button:hover{
+            background: linear-gradient(320deg,white,gray);
+            border-radius: 5px;
+            transform: scale(1.03);
+        }
+
+        .down .out:hover{
+            background: linear-gradient(40deg,red, rgb(246, 139, 139));
+        }
+
+
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="logo">
+            <img src="" alt="Logo">
+            <p>Property Rental System</p>
+        </div>
+        <div id="prof" class="profile">
+            <img src="" alt="Profile Picture">
+        </div>
+    </nav>
+
+    <div class="buttons">
+        <div>
+            <button><a href="Items.html">Houses</a></button>
+            <button>Issues</button>
+        </div>
+        <button>Messages</button>
+        <div>
+            <button>Tenants</button>
+            <button>Transaction</button>
+        </div>
+    </div>
+
+    <div class="nn" id="ok">
+        <button>Personal Info</button>
+        <button>Settings</button>
+        <br><br><br>
+
+        <button class="out">Logout</button>
+    </div>
+
+
+    <script>
+
+        const prof = document.getElementById("prof");
+
+        prof.addEventListener("click", function(){
+            let sett = document.getElementById("ok");
+
+
+            if (sett.classList.contains("nn")){
+
+                sett.classList.add("first");
+                sett.classList.remove("nn");
+
+                setTimeout(function(){
+                    sett.classList.add("second");
+                    setTimeout(function(){
+                        sett.classList.remove("first");
+                        sett.classList.add("down");
+                        setTimeout(function(){
+                            sett.classList.remove("second");
+                        },1000)
+        
+                    },1000)
+                },1000)
+
+            }else{
+
+                sett.classList.add("second");
+                sett.classList.remove("down");
+
+                setTimeout(function(){
+                    sett.classList.add("first");
+                    sett.classList.remove("second");
+
+                    setTimeout(function(){
+                        sett.classList.add("nn");
+                        setTimeout(function(){
+                            sett.classList.remove("first");
+                        },1000)
+        
+                    },1000)
+                },1000)
+
+            }
+        })
+
+        
+        
+    </script>
+</body>
+</html>
